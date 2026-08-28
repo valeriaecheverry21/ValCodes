@@ -1,3 +1,3 @@
 module github.com/valeriaecheverry21/valeriaecheverry21/frontend
 
-go 1.27.0
+go 1.23
