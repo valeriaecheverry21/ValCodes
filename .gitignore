@@ -1,0 +1,14 @@
+# Go (compilados y módulos externos)
+backend/portfolio-api.exe
+backend/*.exe
+backend/.pid
+go.sum
+
+# Node / Vite frontend
+frontend/node_modules/
+frontend/dist/
+frontend/dev*.log
+
+# Logs & misc
+*.log
+.DS_Store
