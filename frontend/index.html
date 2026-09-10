@@ -9,6 +9,18 @@
       content="Portfolio de Valeria Echeverry, Desarrolladora de software especializada en .NET, C#, ASP.NET y SQL Server."
     />
     <title>Valeria Echeverry — Desarrolladora de Software</title>
+    <script>
+      ;(function () {
+        var stored = null
+        try {
+          stored = localStorage.getItem('theme')
+        } catch (e) {}
+        var theme =
+          stored ||
+          (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+        document.documentElement.dataset.theme = theme
+      })()
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
