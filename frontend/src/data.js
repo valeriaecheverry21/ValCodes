@@ -108,4 +108,18 @@ export const projects = [
     tech: ['Go', 'Web'],
     link: 'https://github.com/valeriaecheverry21/chatbot-whatsapp',
   },
+  {
+    name: 'ProfileLedger',
+    description:
+      'API de perfil para Marketplace: consulta de información del usuario con niveles de puntos (Gold, Silver, Bronze), historial de compras paginado y detalle extendido con estado de pago y envío. Arquitectura en capas.',
+    tech: ['Node.js', 'Express', 'REST API'],
+    link: 'https://github.com/valeriaecheverry21/ProfileLedger',
+  },
+  {
+    name: 'TeamRoster',
+    description:
+      'Panel de administración RRHH full-stack para la gestión de empleados (CRUD): listado responsive, creación con validaciones, edición de datos y eliminación con confirmación. Persistencia en SQLite con Sequelize.',
+    tech: ['React', 'Node.js', 'Express', 'SQLite'],
+    link: 'https://github.com/valeriaecheverry21/TeamRoster',
+  },
 ]
