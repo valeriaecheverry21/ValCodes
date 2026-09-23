@@ -17,7 +17,9 @@ export default function About() {
           </div>
           <div className="about-row">
             <PhoneIcon />
-            <a href={`tel:${profile.phoneHref}`}>{profile.phone}</a>
+            <a href={profile.whatsapp} target="_blank" rel="noopener noreferrer">
+              {profile.phone}
+            </a>
           </div>
           <div className="about-row">
             <PinIcon />

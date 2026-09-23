@@ -58,7 +58,12 @@ export default function Contact() {
           <a href={`mailto:${profile.email}`} className="contact-item">
             <MailIcon /> {profile.email}
           </a>
-          <a href={`tel:${profile.phoneHref}`} className="contact-item">
+          <a
+            href={profile.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-item"
+          >
             <PhoneIcon /> +54 11 2396-1238
           </a>
         </div>

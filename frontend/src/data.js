@@ -2,8 +2,11 @@ export const profile = {
   name: 'Valeria Echeverry',
   role: 'Desarrolladora de software',
   email: 'valeriaecheverryzl@hotmail.com',
-  phone: '+54 1123961238',
+  phone: '+54 11 2396-1238',
   phoneHref: '+541123961238',
+  whatsapp:
+    'https://wa.me/541123961238?text=' +
+    encodeURIComponent('Quiero contactarme por el servicio de desarrollo de software'),
   location: 'Argentina',
   github: 'https://github.com/valeriaecheverry21',
   githubUser: 'valeriaecheverry21',
