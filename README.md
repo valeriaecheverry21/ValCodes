@@ -42,7 +42,7 @@ Bienvenido/a al repositorio de **ValCodes**, el portfolio profesional de Valeria
 
 [![LinkedIn](https://img.shields.io/badge/linkedin-%234fffb0?style=for-the-badge&logo=linkedin&logoColor=%230b0e13)](https://www.linkedin.com/in/valeria-echeverry-7610b11b5/)
 [![GitHub](https://img.shields.io/badge/github-%2300c2ff?style=for-the-badge&logo=github&logoColor=%230b0e13)](https://github.com/valeriaecheverry21)
-[![Email](https://img.shields.io/badge/email-%23ff6b6b?style=for-the-badge&logo=gmail&logoColor=%230b0e13)](mailto:valeriaecheverryzl@hotmail.com)
+[![Email](https://img.shields.io/badge/email-%23ff6b6b?style=for-the-badge&logo=gmail&logoColor=%230b0e13)](mailto:valeriaecheverry21@hotmail.com)
 
 ---
 
@@ -85,7 +85,7 @@ La API valida los datos (largo del nombre y mensaje, formato del email), limita 
 |----------------------|-------------------------------------------------------------------|---------------------------------------|
 | `RESEND_API_KEY`     | Clave API de Resend                                               | `re_xxxxxxxx`                         |
 | `CONTACT_FROM_EMAIL` | Remitente. Debe ser un dominio verificado en Resend (para pruebas usá `onboarding@resend.dev`) | `Portfolio <noreply@tudominio.com>` |
-| `CONTACT_TO_EMAIL`   | Destinatario de los mensajes del formulario                       | `valeriaecheverryzl@hotmail.com`     |
+| `CONTACT_TO_EMAIL`   | Destinatario de los mensajes del formulario                       | `valeriaecheverry21@hotmail.com`     |
 | `CALLMEBOT_PHONE`    | (Opcional) Tu número de WhatsApp con código de país               | `+541123961238`                       |
 | `CALLMEBOT_APIKEY`   | (Opcional) Clave que te da CallMeBot                               | `123456`                              |
 | `ALLOWED_ORIGINS`    | (Opcional) Dominios que pueden llamar a la API, separados por coma. Vacío = todos | `https://valeriaecheverry21.github.io` |

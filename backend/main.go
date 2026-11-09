@@ -86,7 +86,7 @@ func handleContact(w http.ResponseWriter, r *http.Request) {
 	// 1) Email vía Resend
 	if apiKey := os.Getenv("RESEND_API_KEY"); apiKey != "" {
 		from := envOr("CONTACT_FROM_EMAIL", "Portfolio <onboarding@resend.dev>")
-		to := envOr("CONTACT_TO_EMAIL", "valeriaecheverryzl@hotmail.com")
+		to := envOr("CONTACT_TO_EMAIL", "valeriaecheverry21@hotmail.com")
 		if err := sendEmail(apiKey, from, to, m); err != nil {
 			log.Printf("email: %v", err)
 			channels["email"] = "error"
