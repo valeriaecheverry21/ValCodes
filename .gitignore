@@ -12,3 +12,7 @@ frontend/dev*.log
 # Logs & misc
 *.log
 .DS_Store
+
+# Variables de entorno locales
+.env
+.env.local

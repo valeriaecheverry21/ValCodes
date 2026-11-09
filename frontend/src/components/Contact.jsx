@@ -2,11 +2,23 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion, useAnimate } from 'motion/react'
 import { toast } from 'sonner'
 import { profile } from '../data'
-import { GithubIcon, LinkedInIcon, MailIcon, PhoneIcon } from './Icons'
+import { GithubIcon, LinkedInIcon, MailIcon, PhoneIcon, WhatsAppIcon } from './Icons'
 import { Reveal, Stagger } from './motion'
 import { fadeUp } from './variants'
 
 const MAX_MESSAGE = 1000
+
+// En Vercel la API vive en el mismo dominio. Si el frontend se publica en otro lado
+// (ej. GitHub Pages), definí VITE_API_URL con la URL de Vercel al hacer el build.
+const API_URL = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '')
+
+// Arma el link de WhatsApp con el contenido del formulario ya escrito
+function whatsappLink({ name, email, message }) {
+  const text = `Hola Valeria, soy ${name.trim()} (${email.trim()}).
+
+${message.trim()}`
+  return `https://wa.me/${profile.phoneHref.replace(/\D/g, '')}?text=${encodeURIComponent(text)}`
+}
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function validate({ name, email, message }) {
@@ -51,6 +63,7 @@ const contactLinks = [
 export default function Contact() {
   const [backend, setBackend] = useState('checking')
   const [values, setValues] = useState({ name: '', email: '', message: '' })
+  const [website, setWebsite] = useState('') // honeypot anti-bots
   const [touched, setTouched] = useState({})
   const [sent, setSent] = useState(null)
   const [submitting, setSubmitting] = useState(false)
@@ -59,7 +72,7 @@ export default function Contact() {
   const errors = validate(values)
 
   useEffect(() => {
-    fetch('/api/health')
+    fetch(`${API_URL}/api/health`)
       .then((r) => setBackend(r.ok ? 'online' : 'offline'))
       .catch(() => setBackend('offline'))
   }, [])
@@ -67,21 +80,30 @@ export default function Contact() {
   const set = (key) => (e) => setValues((v) => ({ ...v, [key]: e.target.value }))
   const blur = (key) => () => setTouched((t) => ({ ...t, [key]: true }))
 
+  // Marca todos los campos y avisa si hay errores. Devuelve true si el form es válido.
+  function checkValid() {
+    setTouched({ name: true, email: true, message: true })
+    if (!Object.keys(errors).length) return true
+    animateForm(formRef.current, { x: [0, -10, 10, -6, 6, 0] }, { duration: 0.4 })
+    const first = Object.keys(errors)[0]
+    document.getElementById(`contact-${first}`)?.focus()
+    return false
+  }
+
+  function sendWhatsApp() {
+    if (!checkValid()) return
+    window.open(whatsappLink(values), '_blank', 'noopener')
+  }
+
   async function handleSubmit(e) {
     e.preventDefault()
-    setTouched({ name: true, email: true, message: true })
-    if (Object.keys(errors).length) {
-      animateForm(formRef.current, { x: [0, -10, 10, -6, 6, 0] }, { duration: 0.4 })
-      const first = Object.keys(errors)[0]
-      document.getElementById(`contact-${first}`)?.focus()
-      return
-    }
+    if (!checkValid()) return
     setSubmitting(true)
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
+        body: JSON.stringify({ ...values, website }),
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok) throw new Error(data.message || 'Error al enviar el mensaje')
@@ -90,8 +112,9 @@ export default function Contact() {
       toast.success(msg)
     } catch (err) {
       toast.error(err.message, {
-        description: 'También podés escribirme por WhatsApp o email.',
-        action: { label: 'WhatsApp', onClick: () => window.open(profile.whatsapp, '_blank', 'noopener') },
+        description: 'Podés enviarme el mismo mensaje por WhatsApp.',
+        duration: 10000,
+        action: { label: 'Enviar por WhatsApp', onClick: () => window.open(whatsappLink(values), '_blank', 'noopener') },
       })
     } finally {
       setSubmitting(false)
@@ -200,16 +223,38 @@ export default function Contact() {
                       {values.message.length}/{MAX_MESSAGE}
                     </span>
                   </Field>
-                  <motion.button
-                    type="submit"
-                    className="btn btn-primary btn-submit"
-                    disabled={submitting}
-                    whileHover={submitting ? undefined : { y: -2 }}
-                    whileTap={submitting ? undefined : { scale: 0.97 }}
-                  >
-                    {submitting && <span className="spinner" aria-hidden="true" />}
-                    {submitting ? 'Enviando…' : 'Enviar mensaje'}
-                  </motion.button>
+                  {/* Campo trampa para bots: oculto para personas y lectores de pantalla */}
+                  <input
+                    className="hp-field"
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                  />
+                  <div className="form-actions">
+                    <motion.button
+                      type="submit"
+                      className="btn btn-primary btn-submit"
+                      disabled={submitting}
+                      whileHover={submitting ? undefined : { y: -2 }}
+                      whileTap={submitting ? undefined : { scale: 0.97 }}
+                    >
+                      {submitting && <span className="spinner" aria-hidden="true" />}
+                      {submitting ? 'Enviando…' : 'Enviar mensaje'}
+                    </motion.button>
+                    <motion.button
+                      type="button"
+                      className="btn btn-whatsapp"
+                      onClick={sendWhatsApp}
+                      whileHover={{ y: -2 }}
+                      whileTap={{ scale: 0.97 }}
+                    >
+                      <WhatsAppIcon /> Enviar por WhatsApp
+                    </motion.button>
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>

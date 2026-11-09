@@ -5,7 +5,7 @@ import { GithubIcon, LinkedInIcon } from './Icons'
 import { fadeUp, staggerContainer } from './variants'
 
 const stats = [
-  { value: 8, suffix: '+', label: 'años de experiencia' },
+  { value: 9, suffix: '', label: 'años de experiencia' },
   { value: experience.length, suffix: '', label: 'empresas' },
   { value: skills.reduce((n, c) => n + c.items.length, 0), suffix: '+', label: 'tecnologías' },
   { value: projects.length, suffix: '', label: 'proyectos públicos' },
@@ -55,22 +55,22 @@ const code = (
     <span className="t-key">Name</span> <span>=</span> <span className="t-str">"Valeria Echeverry"</span>,
   </TLine>
   <TLine className="t-line t-out">
-    <span className="t-key">Location</span> <span>=</span> <span className="t-str">"Argentina"</span>,
+    <span className="t-key">Location</span> <span>=</span> <span className="t-str">"Buenos Aires, Argentina"</span>,
   </TLine>
   <TLine className="t-line t-out">
-    <span className="t-key">Specialty</span> <span>=</span> <span className="t-str">"APIs & Servicios Web"</span>,
+    <span className="t-key">Specialty</span> <span>=</span> <span className="t-str">"Full Stack · .NET & React"</span>,
   </TLine>
   <TLine className="t-line t-out">
     <span className="t-key">Stack</span> <span>=</span>{' '}
-    <span className="t-str">{'["C#", ".NET", "ASP.NET", "SQL Server"]'}</span>,
+    <span className="t-str">{'["C#", ".NET 8", "SQL Server", "React"]'}</span>,
   </TLine>
   <TLine className="t-line t-out">
     <span className="t-key">Architecture</span> <span>=</span>{' '}
-    <span className="t-str">{'["Microservicios", "DDD", "CQRS"]'}</span>,
+    <span className="t-str">{'["Microservicios", "DDD", "CQRS", "BFF"]'}</span>,
   </TLine>
   <TLine className="t-line t-out">
-    <span className="t-key">Cloud</span> <span>=</span>{' '}
-    <span className="t-str">{'["Azure", "GCP", "Docker", "K8s"]'}</span>,
+    <span className="t-key">DevOps</span> <span>=</span>{' '}
+    <span className="t-str">{'["Jenkins", "Azure DevOps", "Git"]'}</span>,
   </TLine>
   <TLine className="t-line t-out">
     <span className="t-key">Available</span> <span>=</span> <span className="t-val">true</span>
@@ -159,10 +159,9 @@ export default function Hero() {
           </span>
         </h1>
         <motion.p className="hero-desc" variants={fadeUp}>
-          <strong>Desarrolladora de software</strong> especializada en soluciones de alto rendimiento.
-          Conocimiento en microservicios, despliegues en la nube, optimización de sistemas críticos y
-          construcción de pipelines de datos. Experta en desarrollo de <strong>APIs y servicios web</strong>{' '}
-          con .NET, C#, ASP.NET y SQL Server.
+          <strong>Desarrolladora full stack</strong> con 9 años de experiencia en el ecosistema{' '}
+          <strong>.NET (C#, SQL Server)</strong> y en frontend con <strong>React y Blazor</strong>. Diseño
+          arquitecturas de microservicios, microfrontends y aplicaciones web para el sector financiero.
         </motion.p>
         <motion.div className="hero-cta" variants={fadeUp}>
           <motion.a

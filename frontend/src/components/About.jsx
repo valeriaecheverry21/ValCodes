@@ -61,8 +61,8 @@ export default function About() {
           </motion.div>
           <h3>Orientación técnica</h3>
           <p>
-            Me enfoco en sistemas críticos de alto rendimiento: APIs, integración de sistemas,
-            microservicios y optimización de bases de datos, siempre con arquitectura limpia y escalable.
+            Diseño arquitecturas de microservicios (DDD/CQRS, API Gateway y BFF) y microfrontends con
+            Module Federation, con testing (xUnit, Moq, React Testing Library) y CI/CD con Jenkins y Azure DevOps.
           </p>
         </SpotlightCard>
       </Stagger>

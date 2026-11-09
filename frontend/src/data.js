@@ -1,43 +1,42 @@
 export const profile = {
   name: 'Valeria Echeverry',
-  role: 'Desarrolladora de software',
-  email: 'valeriaecheverryzl@hotmail.com',
+  role: 'Desarrolladora Full Stack · .NET & React',
+  email: 'valeriaecheverry21@hotmail.com',
   phone: '+54 11 2396-1238',
   phoneHref: '+541123961238',
   whatsapp:
     'https://wa.me/541123961238?text=' +
     encodeURIComponent('Quiero contactarme por el servicio de desarrollo de software'),
-  location: 'Argentina',
+  location: 'Buenos Aires, Argentina',
   github: 'https://github.com/valeriaecheverry21',
   githubUser: 'valeriaecheverry21',
   linkedin: 'https://www.linkedin.com/in/valeria-echeverry-7610b11b5/',
   summary:
-    'Desarrolladora de software especializada en soluciones de alto rendimiento. Conocimiento en microservicios, despliegues en la nube, optimización de sistemas críticos y construcción de pipelines de datos. Me apasiona crear soluciones de software de alta calidad con un enfoque técnico. Me he especializado en el desarrollo de APIs y servicios web para la integración de sistemas, con habilidades en .NET Framework, .NET Core, ASP.NET, C# y SQL Server.',
+    'Desarrolladora full stack con 9 años de experiencia en el ecosistema .NET (C#, SQL Server) y en frontend con React y Blazor. Mi recorrido va del soporte de sistemas al diseño de arquitecturas de microservicios (DDD/CQRS, API Gateway y BFF), microfrontends con Module Federation y aplicaciones web para el sector financiero. Experiencia en testing (xUnit, Moq, React Testing Library) y CI/CD con Jenkins y Azure DevOps; proyectos personales en Next.js y Go.',
 }
 
 export const experience = [
   {
-    role: 'Desarrollador FullStack',
+    role: 'Desarrolladora Full Stack',
     company: 'KPMG Argentina',
     period: '03/2025 — Presente',
     items: [
-      'Desarrollo y mantenimiento de aplicaciones web de uso interno enfocadas en la automatización de procesos operativos.',
-      'Implementación de interfaces modernas utilizando Blazor y MVC sobre .NET 8.',
-      'Optimización del acceso y manipulación de datos mediante el uso avanzado de LINQ y SQL.',
-      'Diseño de soluciones integrales que redujeron los tiempos de ejecución en tareas manuales de los equipos internos.',
+      'Desarrollo aplicaciones internas en .NET 8 (Blazor y MVC) que automatizan procesos operativos de la firma.',
+      'Automaticé tareas manuales de los equipos internos y reduje sus tiempos de ejecución.',
+      'Optimizo el acceso a datos con LINQ y SQL, controlando cuándo se ejecuta cada consulta.',
     ],
   },
   {
-    role: 'Desarrollador de Aplicaciones',
-    company: 'Buafest',
+    role: 'Desarrolladora de Aplicaciones',
+    company: 'Baufest',
     period: '06/2020 — 02/2025',
     items: [
-      'Desarrollo de soluciones de automatización web para el sector de comercio exterior utilizando .NET Framework y APIs.',
-      'Participación en el desarrollo de una solución API de informes para una importante institución financiera utilizando .NET 5/6 Core.',
-      'Implementación de arquitectura DDD (Domain-Driven Design) y el patrón CQRS para optimizar el rendimiento y la organización del sistema.',
-      'Administración y optimización de bases de datos SQL Server, Oracle PL/SQL y MySQL.',
-      'Automatización de compilaciones y gestión de versiones mediante Git y Jenkins.',
-      'Uso de Dapper como ORM para mejorar el rendimiento de las aplicaciones.',
+      'Migré de Salesforce a un CRM propio para los ejecutivos de un banco: microservicios .NET detrás de un API Gateway (Ocelot), con autenticación JWT, permisos por rol y un BFF para el frontend.',
+      'Desarrollé el frontend del CRM en React con React Query y React Hook Form, con tests en React Testing Library.',
+      'Diseñé los microservicios de Comercio Exterior con CQRS, para que los reportes pesados dejaran de competir con las transacciones críticas.',
+      'Implementé microfrontends con Module Federation (Webpack 5), lo que permitió que cada equipo desplegara a su propio ritmo.',
+      'Construí una API de reportes para una entidad financiera (.NET Core, DDD, Dapper) con descargas auditadas y streaming de archivos grandes.',
+      'Desarrollé stored procedures en SQL Server con lógica de negocio para el proyecto de reportería.',
     ],
   },
   {
@@ -45,9 +44,8 @@ export const experience = [
     company: 'Accenture',
     period: '10/2017 — 06/2020',
     items: [
-      'Gestión y soporte de aplicaciones desarrolladas en .NET / C#.NET.',
-      'Administración de bases de datos SQL y Sybase.',
-      'Desarrollo de herramientas de automatización de tareas diarias utilizando Python.',
+      'Mantuve y evolucioné aplicaciones ASP.NET y C# sobre SQL Server y Sybase, de la interfaz a la consulta SQL.',
+      'Automaticé con Python las tareas diarias repetitivas del equipo.',
     ],
   },
 ]
@@ -67,7 +65,7 @@ export const education = [
   },
   {
     institution: 'Coderhouse',
-    degree: 'A1 Engineering',
+    degree: 'AI Engineering',
     period: '',
     status: 'Completado',
   },
@@ -80,11 +78,11 @@ export const education = [
 ]
 
 export const skills = [
-  { category: 'Backend', items: ['.NET', '.NET Core', 'C#', 'ASP.NET', 'Web API', 'Microservicios'] },
-  { category: 'Arquitectura', items: ['DDD', 'CQRS', 'MVC', 'Blazor', 'LINQ', 'Dapper'] },
-  { category: 'Bases de datos', items: ['SQL Server', 'MySQL', 'Oracle PL/SQL', 'Redis'] },
-  { category: 'Frontend', items: ['React', 'JavaScript', 'HTML', 'CSS'] },
-  { category: 'Herramientas & Cloud', items: ['Git', 'GitHub', 'Jenkins', 'Docker', 'Azure', 'Google Cloud', 'Kubernetes'] },
+  { category: 'Backend', items: ['C#', '.NET 8 / .NET Core', 'ASP.NET MVC', 'APIs REST', 'Dapper', 'LINQ', 'Python', 'Go'] },
+  { category: 'Arquitectura', items: ['Microservicios', 'DDD', 'CQRS', 'API Gateway (Ocelot)', 'BFF', 'Microfrontends (Module Federation)'] },
+  { category: 'Frontend', items: ['React', 'React Query', 'React Hook Form', 'Next.js', 'Blazor', 'Material UI', 'Storybook'] },
+  { category: 'Bases de datos', items: ['SQL Server (stored procedures)', 'Oracle PL/SQL', 'MySQL', 'Sybase'] },
+  { category: 'Testing y DevOps', items: ['xUnit', 'Moq', 'React Testing Library', 'Git', 'Jenkins', 'Azure DevOps'] },
 ]
 
 export const languages = ['Castellano (Nativo)', 'Inglés (Intermedio)']

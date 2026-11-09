@@ -1168,6 +1168,36 @@ section {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-whatsapp {
+  border: 1px solid color-mix(in srgb, #25d366 45%, transparent);
+  background: transparent;
+  color: #1faa52;
+  font-family: inherit;
+  justify-content: center;
+}
+
+[data-theme='dark'] .btn-whatsapp {
+  color: #25d366;
+}
+
+.btn-whatsapp:hover {
+  background: color-mix(in srgb, #25d366 10%, transparent);
+}
+
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0;
+}
+
 .btn-submit {
   border: none;
   font-family: inherit;

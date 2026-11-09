@@ -7,7 +7,7 @@ const icons = {
   Arquitectura: '🏛️',
   'Bases de datos': '🗄️',
   Frontend: '🎨',
-  'Herramientas & Cloud': '☁️',
+  'Testing y DevOps': '🧪',
 }
 
 export default function Skills() {

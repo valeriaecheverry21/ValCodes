@@ -14,7 +14,7 @@ export default function Experience() {
         <div className="section-tag">// 02 — trayectoria</div>
         <h2 className="section-title">Experiencia</h2>
         <p className="section-sub">
-          Más de 8 años construyendo software en el sector financiero y de comercio exterior.
+          9 años construyendo software: del soporte de sistemas a arquitecturas de microservicios para el sector financiero.
         </p>
       </Reveal>
       <div className="timeline" ref={ref}>

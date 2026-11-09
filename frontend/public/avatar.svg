@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 64 64" fill="none">
+  <title>Valeria Echeverry</title>
+  <defs>
+    <radialGradient id="glow" cx="78%" cy="18%" r="75%">
+      <stop offset="0" stop-color="#4fffb0" stop-opacity="0.22" />
+      <stop offset="1" stop-color="#4fffb0" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#0b0e13" />
+  <rect width="64" height="64" rx="14" fill="url(#glow)" />
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="13.25" stroke="#4fffb0" stroke-opacity="0.25" stroke-width="1.5" />
+  <g stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 15 L21 41 L29 15" stroke="#e8eaf0" />
+    <path d="M51 15 H38 V41 H51 M38 28 H48" stroke="#4fffb0" />
+  </g>
+  <rect x="13" y="48.5" width="11" height="3.5" rx="1.75" fill="#4fffb0" opacity="0.85" />
+</svg>
