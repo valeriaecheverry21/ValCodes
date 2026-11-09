@@ -1,6 +1,7 @@
 # Go (compilados y módulos externos)
 backend/portfolio-api.exe
 backend/*.exe
+backend/*.exe~
 backend/.pid
 go.sum
 
