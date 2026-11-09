@@ -11,8 +11,11 @@
   },
   "homepage": "https://valeriaecheverry21.github.io/",
   "dependencies": {
+    "lenis": "^1.3.27",
+    "motion": "^14.11.1",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "sonner": "^2.0.8"
   },
   "devDependencies": {
     "@types/react": "^19.2.18",
